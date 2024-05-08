@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 
 :root {
-    /* Theme Colors */
+    /* Theme Colors in root scope*/
     --line-border-fill: #3498db;
     --line-border-empty: #e0e0e0;
 }
@@ -28,21 +28,21 @@ body {
 .progress-container {
     display: flex;
     justify-content: space-between;
-    position: relative;
+    position: relative; /*so I can contain other absolute obejects inside of the progress container which has been previously set relative*/
     margin-bottom: 30px;
     max-width: 100%;
     width: 350px
 }
 
 .progress-container::before {
-    content: '';
+    content: ''; /*inserts the value of the progress bar before transition*/
     background-color: var(--line-border-empty);
     position: absolute;
     top: 50%;
     left: 0;
     transform: translateY(-50%);
     height: 4px;
-    width: 100%;
+    width: 100%; /*this is going to repesent the empty progress line*/
     z-index: -1;
 }
 
@@ -64,9 +64,9 @@ body {
     border-radius: 50%;
     height: 30px;
     width: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: flex; /*aligns and displays numbers in the centre of the circles*/
+    align-items: center; /*aligns and displays numbers in the centre of the circles*/
+    justify-content: center; /*aligns and displays numbers in the centre of the circles*/
     border: 3px solid var(--line-border-empty);
     transition: 0.4s ease;
 }
